@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5 REST Endpoints</title>
+</head>
+<body>
+    <h1>Lab 5 REST Endpoints</h1>
+    <p>Use the following endpoints:</p>
+    <ul>
+        <li>Check Password Quality: <code>/api/password-quality</code></li>
+        <li>Email Validity Check: <code>/api/email-check</code></li>
+        <li>Quiz Questions: <code>/api/quiz</code></li>
+    </ul>
+    <script>
+        // Example JavaScript to call the REST endpoints
+        async function checkPasswordQuality(password) {
+            const response = await fetch('/api/password-quality', {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain' },
+                body: password
+            });
+            const result = await response.text();
+            console.log('Password Quality:', result);
+        }
+    </script>
+</body>
+</html>
